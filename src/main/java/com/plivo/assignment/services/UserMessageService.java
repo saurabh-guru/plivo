@@ -6,9 +6,9 @@ import com.plivo.assignment.response.SearchMessageResponse;
 
 public interface UserMessageService{
 
-    long insertMessage(UserRequest request);
+    long updateMessage(UserRequest request);
 
-    void updateMessage(UserRequest request) throws Exception;
+    //void updateMessage(UserRequest request) throws Exception;
 
     SearchMessageResponse searchByName(String name, Integer page);
 }

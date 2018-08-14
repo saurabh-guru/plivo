@@ -17,22 +17,22 @@ public class UserMessageServiceImpl implements UserMessageService {
     private UserMessageDetailsRepository userMessageDetailsRepository;
 
     @Override
-    public long insertMessage(UserRequest userRequest) {
+    public long updateMessage(UserRequest userRequest) {
         UserMessageDetails userMessageDetails = new UserMessageDetails(userRequest);
         userMessageDetailsRepository.save(userMessageDetails);
         return userMessageDetails.getId();
     }
 
-    @Override
+    /*@Override
     public void updateMessage(UserRequest request) throws Exception {
-        UserMessageDetails userMessageDetails = userMessageDetailsRepository.findByMessage(request.getMessage());
-        if(userMessageDetails!=null){
+       UserMessageDetails userMessageDetails = userMessageDetailsRepository.searchByName(request.getName());
+       if(userMessageDetails!=null){
             userMessageDetails.update(request);
             userMessageDetailsRepository.save(userMessageDetails);
             return;
-        }
-        throw new IllegalArgumentException("Message "+request.getMessage()+" is not found!");
-    }
+        //}
+        //throw new IllegalArgumentException("Message "+request.getMessage()+" is not found!");
+    }*/
 
     @Override
     public SearchMessageResponse searchByName(String name, Integer page) {

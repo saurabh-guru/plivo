@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserMessageDetailsRepository extends JpaRepository<UserMessageDetails,Long> {
-    UserMessageDetails findByMessage(String message);
+    //UserMessageDetails searchByName(String name);
 
     Page<UserMessageDetails> findByName(String name, Pageable pageable);
 }

@@ -1,0 +1,12 @@
+/Users/saurabhguru/plivo/src/main/java/com/plivo/assignment/config/DataConfig.java
+/Users/saurabhguru/plivo/src/main/java/com/plivo/assignment/controllers/UserController.java
+/Users/saurabhguru/plivo/src/main/java/com/plivo/assignment/response/SearchMessageResponse.java
+/Users/saurabhguru/plivo/src/main/java/com/plivo/assignment/services/UserMessageService.java
+/Users/saurabhguru/plivo/src/main/java/com/plivo/assignment/response/ResponseWrapper.java
+/Users/saurabhguru/plivo/src/main/java/com/plivo/assignment/models/UserMessageDetails.java
+/Users/saurabhguru/plivo/src/main/java/com/plivo/assignment/response/UserEntityResponse.java
+/Users/saurabhguru/plivo/src/main/java/com/plivo/assignment/request/UserRequest.java
+/Users/saurabhguru/plivo/src/main/java/com/plivo/assignment/services/impl/UserMessageServiceImpl.java
+/Users/saurabhguru/plivo/src/main/java/com/plivo/assignment/enums/ErrorCode.java
+/Users/saurabhguru/plivo/src/main/java/com/plivo/assignment/AssignmentApplication.java
+/Users/saurabhguru/plivo/src/main/java/com/plivo/assignment/repositories/UserMessageDetailsRepository.java

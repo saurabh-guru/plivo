@@ -1,0 +1,12 @@
+com/plivo/assignment/repositories/UserMessageDetailsRepository.class
+com/plivo/assignment/response/UserEntityResponse.class
+com/plivo/assignment/enums/ErrorCode.class
+com/plivo/assignment/request/UserRequest.class
+com/plivo/assignment/response/ResponseWrapper.class
+com/plivo/assignment/models/UserMessageDetails.class
+com/plivo/assignment/config/DataConfig.class
+com/plivo/assignment/services/impl/UserMessageServiceImpl.class
+com/plivo/assignment/AssignmentApplication.class
+com/plivo/assignment/controllers/UserController.class
+com/plivo/assignment/response/SearchMessageResponse.class
+com/plivo/assignment/services/UserMessageService.class

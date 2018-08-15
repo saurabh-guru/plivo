@@ -10,6 +10,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import com.plivo.assignment.response.UserEntityResponse;
+import com.plivo.assignment.enums.ErrorCode;
+
 @Service
 public class UserMessageServiceImpl implements UserMessageService {
 
@@ -43,6 +46,28 @@ public class UserMessageServiceImpl implements UserMessageService {
             pageable = createPageRequest(page-1,10);
         }
         Page<UserMessageDetails> userMessageDetailsList = userMessageDetailsRepository.findByName(name,pageable);
+	if(userMessageDetailsList.getSize() > 0)
+	{
+		System.out.println("No Records Found");
+		throw new IllegalArgumentException("No Messages by given name were found!");
+	}
+        searchMessageResponse.setUserMessageDetailsList(userMessageDetailsList.getContent());
+        searchMessageResponse.setCurrentPage(userMessageDetailsList.getPageable().getPageNumber()+1);
+        searchMessageResponse.setTotal(userMessageDetailsList.getTotalElements());
+        searchMessageResponse.setPerPage(10);
+
+        return searchMessageResponse;
+    }
+
+    @Override
+    public SearchMessageResponse getAll(Integer page) {
+        SearchMessageResponse searchMessageResponse = new SearchMessageResponse();
+        Pageable pageable = createPageRequest(0,10);
+        if(page!=null){
+
+            pageable = createPageRequest(page-1,10);
+        }
+        Page<UserMessageDetails> userMessageDetailsList = userMessageDetailsRepository.findAll(pageable);
         searchMessageResponse.setUserMessageDetailsList(userMessageDetailsList.getContent());
         searchMessageResponse.setCurrentPage(userMessageDetailsList.getPageable().getPageNumber()+1);
         searchMessageResponse.setTotal(userMessageDetailsList.getTotalElements());

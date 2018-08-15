@@ -35,6 +35,19 @@ public class UserController {
         try{
             SearchMessageResponse searchMessageResponse = userMessageService.searchByName(name,page);
             return UserEntityResponse.buildSuccessResponse(searchMessageResponse);
+        }catch(IllegalArgumentException e){
+            return UserEntityResponse.buildNotFoundResponse(ErrorCode.DATA_NOT_FOUND,e.getMessage());
+        }
+	catch(Exception e){
+            return UserEntityResponse.buildErrorResponse(ErrorCode.INTERNAL_SERVER_ERROR,e.getMessage());
+        }
+    }
+
+    @RequestMapping(value="/getMessages",method = RequestMethod.GET)
+    public UserEntityResponse getAllMessages(Integer page){
+        try{
+            SearchMessageResponse searchMessageResponse = userMessageService.getAll(page);
+            return UserEntityResponse.buildSuccessResponse(searchMessageResponse);
         }catch(Exception e){
             return UserEntityResponse.buildErrorResponse(ErrorCode.INTERNAL_SERVER_ERROR,e.getMessage());
         }

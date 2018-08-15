@@ -11,4 +11,5 @@ public interface UserMessageService{
     //void updateMessage(UserRequest request) throws Exception;
 
     SearchMessageResponse searchByName(String name, Integer page);
+    SearchMessageResponse getAll(Integer page);
 }

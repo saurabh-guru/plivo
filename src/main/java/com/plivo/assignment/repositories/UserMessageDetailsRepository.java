@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserMessageDetailsRepository extends JpaRepository<UserMessageDetails,Long> {
     //UserMessageDetails searchByName(String name);
+    Page<UserMessageDetails> findAll(Pageable pageable);
 
     Page<UserMessageDetails> findByName(String name, Pageable pageable);
 }

@@ -25,4 +25,12 @@ public class UserEntityResponse extends ResponseEntity<ResponseWrapper> {
         return new UserEntityResponse(responseWrapper, HttpStatus.BAD_REQUEST);
     }
 
+    public static UserEntityResponse buildNotFoundResponse(ErrorCode errorCode, String message) {
+        ResponseWrapper responseWrapper = new ResponseWrapper();
+        responseWrapper.setHttpCode(errorCode.getStatusCode());
+        responseWrapper.setMessage(message);
+        responseWrapper.setStatus(errorCode.getMessage());
+        return new UserEntityResponse(responseWrapper, HttpStatus.NOT_FOUND);
+    }
+
 }
